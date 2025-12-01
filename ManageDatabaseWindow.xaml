@@ -1,0 +1,70 @@
+<Window x:Class="CaloriesCalculator.ManageDatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestionare Bază de Date Alimente" Height="450" Width="700" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Panel: List -->
+        <Grid Grid.Column="0" Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0" Margin="0,0,0,5">
+                <Label Content="Caută:"/>
+                <TextBox Name="txtSearch" TextChanged="txtSearch_TextChanged"/>
+            </StackPanel>
+            
+            <ListBox Grid.Row="1" Name="lstFoods" DisplayMemberPath="Name" SelectionChanged="lstFoods_SelectionChanged"/>
+        </Grid>
+
+        <!-- Right Panel: Edit Form -->
+        <GroupBox Grid.Column="1" Header="Detalii Aliment">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Denumire:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Margin="0,5"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Proteine (g):"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="txtProteins" Margin="0,5"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Lipide (g):"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Name="txtLipids" Margin="0,5"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Glucide (g):"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Name="txtCarbs" Margin="0,5"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Fibre (g):"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Name="txtFibers" Margin="0,5"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Content="Calorii (kcal):"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Name="txtCalories" Margin="0,5"/>
+
+                <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="btnNew" Content="Nou" Width="75" Margin="5" Click="btnNew_Click"/>
+                    <Button Name="btnDelete" Content="Șterge" Width="75" Margin="5" Click="btnDelete_Click"/>
+                    <Button Name="btnSave" Content="Salvează" Width="75" Margin="5" Click="btnSave_Click"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

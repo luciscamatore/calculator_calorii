@@ -1,0 +1,43 @@
+<Window x:Class="CaloriesCalculator.AddDatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Food to Database" Height="350" Width="400" WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Margin="0,5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Proteins (g):"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="txtProteins" Margin="0,5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Lipids (g):"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="txtLipids" Margin="0,5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Carbohydrates (g):"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="txtCarbs" Margin="0,5"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Fibers (g):"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="txtFibers" Margin="0,5"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Calories (kcal):"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="txtCalories" Margin="0,5"/>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Name="btnSave" Content="Save" Width="75" Margin="5" Click="btnSave_Click"/>
+            <Button Name="btnCancel" Content="Cancel" Width="75" Margin="5" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
